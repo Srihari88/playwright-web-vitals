@@ -1,0 +1,12 @@
+{
+  "lcp": 3000,
+  "cls": 0.1,
+  "inp": 250,
+  "fcp": 2000,
+  "ttfb": 1200,
+  "domContentLoaded": 2500,
+  "loadEvent": 5000,
+  "totalBlockingTime": 250,
+  "resourceCount": 120,
+  "memoryUsedJSHeapSize": 80000000
+}

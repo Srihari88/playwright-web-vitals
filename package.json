@@ -1,0 +1,53 @@
+{
+  "name": "playwright-web-vitals",
+  "version": "1.0.8",
+  "description": "Production-ready Playwright based Core Web Vitals and advanced performance metrics library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "playwright-web-vitals": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "prepack": "npm run clean && npm run build",
+    "prepublishOnly": "npm run test && npm run build",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "example:run": "tsx examples/usage.ts"
+  },
+  "keywords": [
+    "playwright",
+    "web-vitals",
+    "core-web-vitals",
+    "performance",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "playwright": ">=1.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@playwright/test": "^1.52.0",
+    "playwright": "^1.52.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

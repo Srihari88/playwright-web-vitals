@@ -1,0 +1,42 @@
+name: Web Vitals Budget
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  web-vitals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build library
+        run: npm run build
+
+      - name: Run web vitals checks
+        run: |
+          node dist/cli.js \
+            --url https://example.com \
+            --thresholds ./examples/thresholds.json \
+            --json-out ./reports/web-vitals.json \
+            --html-out ./reports/web-vitals.html
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-vitals-reports
+          path: reports/
