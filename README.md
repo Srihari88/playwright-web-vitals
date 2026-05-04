@@ -1,6 +1,11 @@
 # playwright-web-vitals
 
 Measure Core Web Vitals and advanced web performance metrics using Playwright.
+![Performance](https://img.shields.io/badge/Performance-Web_Testing-blue?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-Performance-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Web Vitals](https://img.shields.io/badge/Web_Vitals-Metrics-green?style=flat-square)
+![Browser Performance](https://img.shields.io/badge/Browser_Performance-Optimization-blue?style=flat-square)
+![LCP](https://img.shields.io/badge/LCP-Core_Web_Vitals-success?style=flat-square)
 
 ## 30-second setup
 
